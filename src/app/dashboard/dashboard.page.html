@@ -1,0 +1,16 @@
+<h2> Pending approvals</h2>
+<ng-container *ngIf="products$ | async as products">
+    <ng-container *ngIf="products.length > 0; else emptyProduct">
+        <div class="list-approval" *ngFor="let product of products">
+            {{ product.name}}
+
+            <button (click)="approve(product)"> Approve </button>
+        </div>
+
+    </ng-container>
+    <ng-template #emptyProduct>
+        <p class="empty-products">
+            No products to be approved
+        </p>
+    </ng-template>
+</ng-container>
