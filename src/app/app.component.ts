@@ -1,23 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
+export class AppComponent {
   actualRoute = 'experimentation';
 
   constructor(
     private readonly router: Router,
     private readonly route: ActivatedRoute
-  ) { }
+
+  ) {
+
+  }
 
   ngOnInit(): void {
-      this.router.events
+    this.router.events
       .pipe(
         filter(e => e instanceof NavigationEnd)
       ).forEach(e => {
