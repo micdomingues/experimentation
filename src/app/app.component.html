@@ -1,2 +1,16 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<div class="grid-container">
+    <!-- <div class="header"> HEADER </div> -->
+    <div class="menu"> 
+        <h1>
+            Experimentation App
+        </h1>
+        <app-menu></app-menu>
+    </div>
+    <div class="main"> 
+        <h2>{{ actualRoute }}</h2>
+        <router-outlet></router-outlet>
+
+    </div>
+    <div class="sidebar"> SIDEBAR </div>
+    <div class="footer"> FOOTER </div>
+</div>

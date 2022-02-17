@@ -10,7 +10,6 @@ export class DashboardPage {
   }
 
   hasNoPendingProducts() {
-    // return cy.get('p.empty-products').should('')
     cy.get('p.empty-products').should(($p) => {
       expect($p).to.have.length(1);
       expect($p.eq(0)).to.contain('No products to be approved');
@@ -25,6 +24,10 @@ export class DashboardPage {
   
   getAllProducts() {
     return cy.get('div.list-approval');
+  }
+  
+  getAllButtons() {
+    return this.getAllProducts().get('div.list-approval');
   }
 
 }

@@ -1,7 +1,7 @@
 <h2> Pending approvals</h2>
 <ng-container *ngIf="products$ | async as products">
     <ng-container *ngIf="products.length > 0; else emptyProduct">
-        <div class="list-approval" *ngFor="let product of products">
+        <div class="list-approval" *ngFor="let product of products; let index = index; trackBy:trackBy">
             {{ product.name}}
 
             <button (click)="approve(product)"> Approve </button>

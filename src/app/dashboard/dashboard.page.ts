@@ -24,5 +24,9 @@ export class DashboardPage implements OnInit {
   approve(product: Product) {
     this.store.dispatch(approveProduct({ name: product.name }));
   }
+  
+  trackBy(index: number): number {
+    return index;
+  }
 
 }

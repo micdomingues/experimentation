@@ -32,8 +32,13 @@ And(/^I have some products to approval$/, () => {
 
 When(/^I do click on "Approval" on every product$/, () => {
 
-  page.getAllProducts().find('button').click({ multiple: true })
 
+  page.getAllButtons().then(($buttonList) => {
+    const buttonCount = Cypress.$($buttonList).length;
+    for (let i = 0; i < buttonCount; i++) {
+      page.getAllButtons().first().click();
+    }
+  });
 });
 
 When(/^I do not have products to approval$/, () => {
