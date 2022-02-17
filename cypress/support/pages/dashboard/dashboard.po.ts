@@ -27,7 +27,7 @@ export class DashboardPage {
   }
   
   getAllButtons() {
-    return this.getAllProducts().get('div.list-approval');
+    return this.getAllProducts().find('button');
   }
 
 }

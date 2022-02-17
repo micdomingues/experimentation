@@ -7,11 +7,6 @@ Before(() => {
   page = new AppPage();
 });
 
-// Given(/^I am on the home page$/, () => {
-//   page.navigateTo();
-//   // cy.visit('/');
-// });
-
 Given(/^I am on the home page$/, () => {
   page.navigateTo();
 });

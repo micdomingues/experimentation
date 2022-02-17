@@ -14,10 +14,7 @@ export class AppComponent implements OnInit {
   constructor(
     private readonly router: Router,
     private readonly route: ActivatedRoute
-
-  ) {
-
-  }
+  ) { }
 
   ngOnInit(): void {
       this.router.events
